@@ -448,11 +448,18 @@ color: #404BBF;
 
 /* ===== Section 3 =====*/
 .wedo{
+	display: none;
 	padding-top: 0;
 }
+@media only screen and (min-width: 1200px) {
+	.wedo{
+		display: block;
+  }
+}
+
 .wedo-list{
 	display: flex;
-	gap: 24px;
+	gap: var(--indent-vertical);
 	justify-content: space-between;
 }
 /* 
@@ -469,14 +476,16 @@ color: #404BBF;
 .list-team{
 	display: flex;
 	flex-wrap: wrap;
-	
+	justify-content: center;
+
 	row-gap: var(--indent-horizontal);
 	column-gap: var(--indent-vertical);
-
 }
-
-
-
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.list-team{
+		row-gap: 64px;
+  }
+}
 
 .team-list{
 	background-color: var(--color-white);
@@ -484,6 +493,7 @@ color: #404BBF;
 	text-align: center;
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
 .team-list-head{
 	text-align: center;
 }
@@ -504,23 +514,40 @@ color: #404BBF;
 /* ==== Иконки Customers ==== */
 .customer {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
-	gap: var(--indent-horizontal);
+
+	row-gap: var(--indent-horizontal);
+	column-gap: var(--indent-vertical);
+
 }
+.customer-item{
+	flex-basis: calc((100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items));
+	--items: 2;
+}
+@media only screen and (min-width: 768px) {
+	.customer-item{
+		--items: 3;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.customer-item{
+		--items: 6;
+	}
+}
+
 .customer-head {
 	line-height: 1.1;	
 }
-
-/*.customer-item {
-}*/
 
 .customer-link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	width: 168px;
+	margin: 0;
+
+	width: 100%;
 	height: 88px;
 	border: 1px solid;
 	border-color: #8E8F99;
@@ -540,6 +567,8 @@ color: #404BBF;
 	fill: currentColor;
 }	
 /*=========================*/
+
+
 
 /*=== Footer styles  ======*/
 .footer{
