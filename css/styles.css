@@ -78,6 +78,22 @@ a {
 }
 /* = =========================== = */  
 
+    /**
+  |============================
+  | Card set
+  |============================
+*/
+.card-set {
+	display: flex;
+	flex-wrap: wrap;
+  
+	row-gap: var(--indent-horizontal);
+	column-gap: var(--indent-vertical);
+  }
+  .card-set-item {
+	flex-basis: calc((100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items));
+  }
+
 /*Base style*/
 body{
     color: var(--color-slate);
@@ -94,14 +110,6 @@ body{
 }
 
 /*ставимо на кожну секцию через div
-
-.container{ 
-	width: 1158px; 
-	margin: 0 auto; /*для центрування контенту*/
-	/*margin-right: auto;
-	padding: 0 15px;
-} */
-
 
 /* Basic */
 .container{
@@ -126,18 +134,43 @@ body{
   }
 }
 
-section{
+.section{
 	padding: 96px 0;
 }
 @media only screen and (min-width: 1200px) {
-	section{
+	.section{
 		padding: 120px 0;
   }
 }
 
-
 /* ====== Text Style ====== */
 .hero-header{
+	display: block;
+	margin: 0px auto;
+	margin-bottom: var(--indent-horizontal);
+
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 1.11;
+	letter-spacing: 0.02em;
+    color: var(--color-white);
+    text-align: center;
+
+	max-width: 320px;
+}
+@media only screen and (min-width: 768px) {
+	.hero-header{
+		margin-bottom: 36px;
+
+		font-size: 56px;
+		font-weight: 700;
+		line-height: 1.07;
+
+		max-width: 496px;
+  }
+}
+
+/*.hero-header{
 	display: block;
 	margin: 0px auto;
 	margin-bottom: 48px;
@@ -150,9 +183,10 @@ section{
     text-align: center;
 
 	max-width: 496px;
-	/*padding-top: 68px;*/
-	
-}
+}*/
+
+
+
 .header-section{	
 	font-size: 36px;
 	font-weight: 700;
@@ -162,7 +196,7 @@ section{
     text-align: center;
     color: var(--color-navy-blue);
 	
-	margin-bottom: 72px;
+	margin-bottom: var(--indent-horizontal);
 
 }
 .header-small{
@@ -285,25 +319,17 @@ color: #404BBF;
     color: currentColor;
 }
 
-/**
-  |============================
-  | Card set
-  |============================
-*/
-.card-set {
-	display: flex;
-	flex-wrap: wrap;
-  
-	row-gap: var(--indent-horizontal);
-	column-gap: var(--indent-vertical);
-  }
-  .card-set-item {
-	flex-basis: calc((100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items));
-  }
 
 /* ===== Section 1 ===== */
 .hero{
-    background-color: var(--color-navy-blue);
+	min-width: 320px;
+    max-width: 767px;
+	height: 432px;
+	padding: 112px 0;
+	margin: auto; /* Центруем весь блок*/
+	
+	
+	background-color: var(--color-navy-blue);
 	
 	background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
     url(../images/hero/hero-bgpeople-office1.jpg);
@@ -311,12 +337,21 @@ color: #404BBF;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-
-	max-width: 1440px;
-	height: 600px;
-	padding: 188px 0;
-	margin: auto; /* Центруем весь блок*/
 }
+@media only screen and (min-width: 768px) {
+	.hero{
+		max-width: 1199px;
+		height: 432px;
+   	}
+}
+@media only screen and (min-width: 1200px) {
+	.hero{
+		max-width: 1440px;
+		height: 600px;
+		padding: 188px 0;
+	}
+}
+
 .button{
 	display: block;
 	margin: 0px auto;
@@ -326,7 +361,6 @@ color: #404BBF;
 	padding: 15px 31px;
 	border-style: none;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 4px;
 
 	background-color: var(--color-iris);
 	color: var(--color-white);
@@ -341,14 +375,15 @@ color: #404BBF;
 
 	/* Для перехода делаем в основном стиле условия */
 	transition-property: background-color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
 
 }
 .button:hover,
 .button:focus{
 	background-color: var(--color-ocean);
 }
+
+
 
 /* [type] {} */
 
@@ -470,6 +505,7 @@ color: #404BBF;
 
 /* ====  4 For Team ====*/
 .team{
+	min-width: 320px;
 	background-color: #f4f4fd;
 }
 
@@ -555,8 +591,7 @@ color: #404BBF;
 	color: #8E8F99;
 
 	transition-property: border-color, color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
 	
 }
 .customer-link:hover,
@@ -664,8 +699,7 @@ color: #404BBF;
 
 	/* Для перехода делаем в основном стиле условия */
 	transition-property: background-color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
 
 }
 
@@ -708,8 +742,7 @@ color: #404BBF;
 	background-color: var(--color-iris);
 
 	transition-property: background-color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
 
 }
 .social-icon {
@@ -760,8 +793,7 @@ color: #404BBF;
 	padding: 12px 24px;
 
 	transition-property: color, background-color, border-color, box-shadow;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
 
 }
 .flrt:hover,
