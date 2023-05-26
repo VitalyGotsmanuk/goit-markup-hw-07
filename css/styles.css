@@ -266,7 +266,9 @@ color: #404BBF;
 	box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .header-nav{
+	
 	display: flex;
+	
 	align-items: center;
 	margin-right: auto;
 }
@@ -294,17 +296,23 @@ color: #404BBF;
 	background-color: #404BBF;
 	}
 .header-container {
+
+	
 	display: flex;
 	align-items: center;
-	min-height: 72px;
+	min-height: 70px;
 }
 .header-nav-list{
-	display: flex;
-	/*align-items: ;*/
+	display: none;
+	/*display: flex;
+	align-items: ;*/
 	gap: 40px;
 }
 .header-adr-list{
-	display: flex;
+	display: none;
+
+	/*display: flex;*/
+	
 	align-items: right;
 	color: inherit;
 }
@@ -607,38 +615,56 @@ color: #404BBF;
 
 /*=== Footer styles  ======*/
 .footer{
+	min-width: 320px;
     background-color: var(--color-navy-blue);
-	padding: 100px 0;
+	padding: 96px 0;
 }
+@media only screen and (min-width: 1200px) {
+	.footer{
+		padding: 100px 0;
+  }
+}
+
 .footer-container{
 	display: flex;
+	flex-wrap: wrap;
 	align-items: baseline;
+	justify-content: center;
+	
+
 }
+
+
+
 .logo-ft, .text-medium-ftr{
 	display: inline-block;
 	margin-bottom: 16px;
 }
 .footer-txt{
     color: #ffffff;
-	max-width: 264px;
+	max-width: 268px;
+
+
 }
 .footer-lft {
-	margin-right: 120px;
+	
+	/*margin-right: 120px;*/
 }
 .footer-rt{
 	display: inline-block;
 	align-items: start;
-	margin-right: 80px;
+	/*margin-right: 80px;*/
 }
 
 .subscribe-form-field{
-	margin-right: 24px;
+	/*margin-right: 24px;*/
 
 }
 
 .subscrb-email{
 	border-style: none;
-	width: 264px;
+	width: 100%;
+	/*width: 264px;*/
 	
 	min-height: 40px;
 	border-radius: 4px;
@@ -661,7 +687,6 @@ color: #404BBF;
 .subscrb-email:focus{
 	border: none;
 	outline: 1px solid var(--color-iris);
-
 }
 
 .subscrb-email::placeholder{
@@ -894,8 +919,7 @@ color: #404BBF;
 	background-color: rgba(46, 47, 66, 0.4);
 
 	transition-property: opacity, visibility;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
 	
 }
 
@@ -922,8 +946,7 @@ color: #404BBF;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
 	transition-property: transform;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
  	
 	padding: 72px 24px 24px 24px;
 }
@@ -946,8 +969,7 @@ color: #404BBF;
 	border-radius: 50%;
 
 	transition-property: background-color, border;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition: var(--anime);
  	
 }
 .modal-close-btn:focus,
