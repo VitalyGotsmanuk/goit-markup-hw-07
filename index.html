@@ -32,16 +32,10 @@
 <body>
 
     <!--Header-->
+
     <header class="header">
     <div class="header-container container">
-
-        <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
-            <svg width="32" height="22">
-              <use href="./images/icons.svg#burger-menu"></use>
-            </svg>
-          </button>
-
-
+      
         <nav class="header-nav">
             
             <a class="logo link" href="./index.html">Web<span class="logo-w">Studio</span></a>
@@ -69,6 +63,14 @@
                 </li>
             </ul>
         </address>
+
+        <button class="menu-toggle js-open-menu" aria-expanded="false" 
+                aria-controls="mobile-menu">
+            <svg width="32" height="22">
+              <use href="./images/icons.svg#burger-menu"></use>
+            </svg>
+          </button>
+
     </div>                
     </header>
 
@@ -456,10 +458,97 @@
     </div>     
     </footer> -->
 
+<!-- Mobile menu -->
+<div class="menu-container js-menu-container" id="mobile-menu">
+
+    <button class="menu-toggle js-close-menu">
+      <svg
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </button>
+
+    <ul class="mobile-menu list">
+      <li><a href="./index.html" class="link">Studio</a></li>
+      <li><a href="./portfolio.html" class="link">Portfolio</a></li>
+      <li><a href="" class="link">Contacts</a></li>
+    </ul>
+
+    <ul class="mobile-contacts list">
+      <li><a href="tel:110001111111" class="mobile-phone link">+11 (000) 111-11-11</a></li>
+      <li><a href="mailto:info@devstudio.com" class="mobile-mail link">info@devstudio.com</a></li>
+    </ul>
+
+    <ul class="mobile-socials socials list">
+      <li class="socials-item">
+        <a
+          class="socials-link"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram icon"
+        >
+          <svg class="social-icon" width="24" height="24">
+            <use href="./images/icons.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="socials-item">
+        <a
+          class="socials-link link"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Twitter icon"
+        >
+          <svg class="social-icon" width="24" height="24">
+            <use href="./images/icons.svg#twitter"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="socials-item">
+        <a
+          class="socials-link link"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook icon"
+        >
+          <svg class="social-icon" width="24" height="24">
+            <use href="./images/icons.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="socials-item">
+        <a
+          class="socials-link link"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Linkedin icon"
+        >
+          <svg class="social-icon" width="24" height="24">
+            <use href="./images/icons.svg#linkedin"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
 
     <!-- Modal window -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
+        
         <button type="button" class="modal-close-btn" data-modal-close>
           <svg class="modal-close-icon" width="8" height="8">
             <use href="./images/icons.svg#close-icon"></use>
@@ -529,15 +618,23 @@
                 </label>
 
                 <button type="submit" class="button">Send</button>   
-            </form>     
-            
-            
-       
-      </div>
+            </form> 
+        </div>
     </div>
 
-    <!-- Ставимо перед закриваючим тегом body -->
-    <script src="./js/modal.js"></script> <!-- Скрипт для модального вікна - посилання -->
-
+    <!-- Ставимо перед закриваючим тегом body всі скрипти -->
+    
+    <!-- Скрипт для модального вікна - посилання -->
+    <script src="./js/modal.js"></script> 
+    
+    <!-- Скрипт для мобільного меню - посилання -->
+    <script
+        defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+        integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+        crossorigin="anonymous"
+    ></script>
+    
+    <script src="./js/mobile-menu.js"></script> 
 </body>
 </html>
