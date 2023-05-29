@@ -11,12 +11,14 @@ h6,
 p  {
 	margin: 0;
 }
-/* == Pict style == */
+/* == Pict style ДЛя респонсивних зображень == */
 img {
 	display: block;
 	max-width: 100%;
 	height: auto;
 
+	object-fit: cover;
+	object-position: center;
 }
 button {
 	cursor: pointer; /* Всі кнопки мають властивість  pointer*/ 
@@ -314,23 +316,69 @@ color: #404BBF;
 	height: 432px;
 	padding: 112px 0;
 	margin: auto; /* Центруем весь блок*/
-	
-	
+		
 	background-color: var(--color-navy-blue);
-	
-	background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/hero/hero-bgpeople-office1.jpg);
 	
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	background-image: 
+	linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/hero/dark-bg_mobile@1x.jpg);
+		
 }
+@media (min-device-pixel-ratio: 2), 
+		(min-resolution: 192dpi), 
+		(min-resolution: 2dppx) {
+   .hero{
+		background-image: 
+		linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+   		url(../images/hero/dark-bg_mobile@2x.jpg);
+  	}
+}
+
+@media only screen and (min-width: 429px) {
+   .hero{
+		background-image: 
+		linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    	url(../images/hero/dark-bg_tablet@1x.jpg);
+  	}
+
+  @media (min-device-pixel-ratio: 2), 
+		(min-resolution: 192dpi), 
+		(min-resolution: 2dppx) {
+   .hero{
+		background-image: 
+		linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+   		url(../images/hero/dark-bg_tablet@2x.jpg);
+  		}
+	}
+}
+
 @media only screen and (min-width: 768px) {
 	.hero{
 		max-width: 1199px;
-		height: 432px;
+		height: 436px;
    	}
 }
+@media only screen and (min-width: 769px) {
+	.hero{
+	 background-image: 
+	 linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+	 url(../images/hero/people-office_desktpo@1x.jpg);
+   }
+   @media (min-device-pixel-ratio: 2), 
+		(min-resolution: 192dpi), 
+		(min-resolution: 2dppx) {
+   .hero{
+		background-image: 
+		linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+   		url(../images/hero/people-office_desktpo@2x.jpg);
+  		}
+	}
+}
+
 @media only screen and (min-width: 1200px) {
 	.hero{
 		max-width: 1440px;
@@ -338,6 +386,7 @@ color: #404BBF;
 		padding: 188px 0;
 	}
 }
+
 .button{
 	display: block;
 	margin: 0px auto;
@@ -362,7 +411,6 @@ color: #404BBF;
 	/* Для перехода делаем в основном стиле условия */
 	transition-property: background-color;
 	transition: var(--anime);
-
 }
 .button:hover,
 .button:focus{
@@ -484,7 +532,6 @@ color: #404BBF;
 	min-width: 320px;
 	background-color: #f4f4fd;
 }
-
 .list-team{
 	display: flex;
 	flex-wrap: wrap;
@@ -498,14 +545,12 @@ color: #404BBF;
 		row-gap: 64px;
   }
 }
-
 .team-list{
 	background-color: var(--color-white);
 	border-radius: 0px 0px 4px 4px;
 	text-align: center;
 	box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-
 .team-list-head{
 	text-align: center;
 }
