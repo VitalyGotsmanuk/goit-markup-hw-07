@@ -194,19 +194,25 @@ body{
 	
 	margin-bottom: 8px;
 }
-.text-body,
-.text-body-footer, 
+.text-body, 
 .text-body-adr{
-	font-style: normal;
+	font-weight: 500;
 	line-height: 1.5;
 	letter-spacing: 0.02em;
+	
+	font-style: normal;
 	color: var(--color-slate);
 	
 	transition-property: color;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+	transition: var(--anime);
+	
 }
+@media only screen and (min-width: 1200px) {
+	.text-body{
+		font-weight: 400;
+  }
+}
+
 .text-body-medium, .text-medium-ftr {
 	font-weight: 500;
 	line-height: 1.5;
@@ -224,7 +230,7 @@ body{
 	color: var(--color-ocean);
 }
 .text-body-medium.active{
-color: #404BBF;
+color: var(--color-ocean);
 }
 
 .text-small{
@@ -558,6 +564,14 @@ color: #404BBF;
 	padding: 32px 0px;
 }
 .team-txt{
+	/* font-weight: 400; */
+	font-size: 16px;
+	line-height: 1.5;
+
+	letter-spacing: 0.02em;
+
+	/* color: var(--color-slate); */
+
 	text-align: center; 
 	margin: 8px;
 }
@@ -576,10 +590,10 @@ color: #404BBF;
 	column-gap: var(--indent-vertical);
 
 }
-.customer-item{
+/* .customer-item{
 	flex-basis: calc((100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items));
 	--items: 2;
-}
+} */
 @media only screen and (min-width: 768px) {
 	.customer-item{
 		--items: 3;
@@ -600,7 +614,7 @@ color: #404BBF;
 
 	margin: 0;
 
-	width: 100%;
+	width: 190px;
 	height: 88px;
 	border: 1px solid;
 	border-color: #8E8F99;
@@ -609,8 +623,14 @@ color: #404BBF;
 
 	transition-property: border-color, color;
 	transition: var(--anime);
-	
 }
+@media only screen and (min-width: 768px) {
+	.customer-link{
+		width: 168px;
+
+  }
+}
+
 .customer-link:hover,
 .customer-link:focus  {
 	color: #404bbf;
@@ -651,14 +671,11 @@ color: #404BBF;
 }
 @media only screen and (min-width: 1200px) {
 	.footer-container{
-		display: flex;
 		flex-wrap: nowrap;
 
 		column-gap: 0;
-
   }
 }
-
 
 .logo-ft, .text-medium-ftr{
 	display: inline-block;
@@ -666,23 +683,24 @@ color: #404BBF;
 	text-align: center;
 }
 .footer-txt{
-    color: #ffffff;
-	max-width: 268px;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	font-style: normal;
+    color: var(--color-white);
+
+	width: 268px;
 }
 .footer-lft {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 16px;
+	gap: 17.5px;
 	margin-bottom: 72px;
 }
 .footer-rt{
-	display: flex;
+	/* display: flex; */
 	flex-direction: column;
 	justify-content: center;
-	gap: 16px;
-
 	margin-bottom: 72px;
 }
 @media only screen and (min-width: 768px) {
@@ -704,10 +722,10 @@ color: #404BBF;
 
 .footer-subscribe{
 	width: 100%;
-	display: flex;
+	/* display: flex; 
 	flex-direction: column;
 	align-items: center;
-	gap: 16px;
+	gap: 16px;*/
 }
 
 @media only screen and (min-width: 768px) {
@@ -721,16 +739,32 @@ color: #404BBF;
 		display: flex;
 	}
 }
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
 	.footer-subscribe{
 		max-width: 455px;
 	}
+} */
+.subscrb-txt{
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+
+	letter-spacing: 0.02em;
+	color: var(--color-white);
+	text-align: center;
+
+	margin-bottom: 16px;
+}
+@media only screen and (min-width: 768px) {
+	.subscrb-txt{
+		text-align: left;
+  }
 }
 
 .subscrb-email{
 	border-style: none;
-	min-width: 398px;
-	min-height: 40px;
+	width: 100%;
+	height: 40px;
 
 	border-radius: 4px;
 	border: 1px solid #FFFFFF;
@@ -749,7 +783,7 @@ color: #404BBF;
 }
 @media only screen and (min-width: 768px) {
 	.subscrb-email {
-		min-width: 264px;
+		width: 264px;
 		margin-bottom: 0;
 
 		margin-right: 24px;
@@ -797,6 +831,11 @@ color: #404BBF;
 	/* Для перехода делаем в основном стиле условия */
 	transition-property: background-color;
 	transition: var(--anime);
+}
+@media only screen and (min-width: 768px) {
+	.subscrb-button{
+		margin: 0;
+  }
 }
 
 .subscrb-button:hover,
@@ -985,7 +1024,6 @@ color: #404BBF;
 	overflow: hidden; /* приячет карточку с текстом*/
 }
 .overlay-text{
-
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1039,12 +1077,17 @@ color: #404BBF;
 
 /* == Біла плашка == */
 .modal{
+	/*для гнучкого розміру вікна (видимої області)*/
+	width: 95%;
+	max-width: 392px;
+	height: 95%;
 	max-height: 584px;
-	width: 392px;
+	overflow: scroll;
 
 	padding: 72px 16px 24px 16px;
 	
 	position: absolute;
+	
 	/*для центрування строго по центру вінка (видимої області)*/
 	top: 50%;
 	left: 50%;
@@ -1106,9 +1149,16 @@ color: #404BBF;
 }
 
 .contac-form-head{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+
+	text-align: center;
+	letter-spacing: 0.02em;
+
+	color: var(--color-navy-blue);
+	
+	margin-bottom: 16px;
 }
 
 .modal-form {
@@ -1354,6 +1404,9 @@ color: #404BBF;
     
 	margin-bottom: 40px;
 }
+.mobile-menu .link.active{
+	color: var(--color-ocean);
+}
 .link:hover,
 .link:focus {
 	color: var(--color-ocean);
@@ -1368,7 +1421,7 @@ color: #404BBF;
 .mobile-phone{
 	font-style: normal;
 	font-weight: 700;
-	font-size: 36px;
+	font-size: 26px;
 	line-height: 1.11;
 	letter-spacing: 0.02em;
 	text-transform: capitalize;
@@ -1385,7 +1438,15 @@ color: #404BBF;
 }
 .mobile-socials{
 	justify-content: flex-start;
-	gap: 56px;
+	gap: 24px;
+}
+@media only screen and (min-width: 420px) {
+	.mobile-phone{
+		font-size: 36px;
+	}
+	.mobile-socials{
+		gap: 56px;
+  }
 }
 
 /* == =========== == */
